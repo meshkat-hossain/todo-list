@@ -21,8 +21,6 @@ const ToDo = () => {
   const [deletedCount, setDeletedCount] = useState(0);
   console.log(deletedCount);
 
-
-
   //Add item
   const listOfItem = (e) => {
     if (!item) {
@@ -38,7 +36,6 @@ const ToDo = () => {
   //Delete item
   const deleteItem = (IndexItem) => {
     const updateitem = newItem.filter((elm, ind, array) => {
-     
       return ind !== IndexItem;
     });
     setNewItem(updateitem);
@@ -71,13 +68,12 @@ const ToDo = () => {
     setItem(" ");
   };
 
-
   return (
     <>
       <div className="main_div">
         <p className="progressBer">
           <span className="deletedCount">{deletedCount}</span> Out Of
-          <span className="length">{newItem.length}</span> ToDo's Are Completed
+          <span className="length">{newItem.length}</span> Todo's Are Completed
         </p>
 
         <div className="Input_button">
@@ -96,7 +92,6 @@ const ToDo = () => {
           </form>
 
           <button className="Btn" type="submit" onClick={listOfItem}>
-            
             <AddCircleIcon className="pluse_button" />
           </button>
         </div>
@@ -110,14 +105,10 @@ const ToDo = () => {
         </ol>
         <br />
         <br />
-        <div>
-          <button  className="undo">
-            UnDO
-          </button>
-          <button  className="redo">
-            ReDO
-          </button>
-        </div>
+        {/* <div>
+          <button className="undo">UnDO</button>
+          <button className="redo">ReDO</button>
+        </div> */}
         <br />
         <br />
         <br />
@@ -132,4 +123,3 @@ const ToDo = () => {
 export default ToDo;
 
 // 1. data j khane ase (local storage ) sekhan theke 1st e jokhon save hobe tokhon data arekta hooks er modhe rakhte hobe , then hooks theke undo click korle
-
